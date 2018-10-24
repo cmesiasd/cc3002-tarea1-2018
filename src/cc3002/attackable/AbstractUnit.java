@@ -6,16 +6,16 @@ package cc3002.attackable;
  */
 public abstract class AbstractUnit implements Attackable{
     private String Name;
-    private int HitPoints, DamageTaken, AttackPoints;
+    private float HitPoints, DamageTaken, AttackPoints;
 
     /**
      * Constructor for AbstractUnit
      * @param n Name of the Unit
      * @param hp HitPoints
-     * @param dt Damage Taken
+     * @param dt DamageTaken
      * @param ap Attack Points
      */
-    public AbstractUnit(String n, int hp, int dt, int ap){
+    public AbstractUnit(String n, float hp, float dt, float ap){
         this.Name = n;
         this.HitPoints = hp;
         this.DamageTaken = dt;
@@ -34,7 +34,7 @@ public abstract class AbstractUnit implements Attackable{
      * Return HitPoints of the Unit
      * @return Unit's HP
      */
-    public int getHitPoints(){
+    public float getHitPoints(){
         return this.HitPoints;
     }
 
@@ -42,7 +42,7 @@ public abstract class AbstractUnit implements Attackable{
      * Return Damage Taken of the Unit
      * @return Unit's Damage Taken
      */
-    public int getDamageTaken(){
+    public float getDamageTaken(){
         return this.DamageTaken;
     }
 
@@ -50,8 +50,45 @@ public abstract class AbstractUnit implements Attackable{
      * Return Attack Points of the Unit
      * @return Unit's AP
      */
-    public int getAttackPoints(){
+    public float getAttackPoints(){
         return this.AttackPoints;
     }
+
+    @Override
+    public void attackedByInfant(Infantry aInfant) {
+
+    }
+
+    @Override
+    public void attackedByArcher(Archer aArcher) {
+
+    }
+
+    @Override
+    public void attackedByCavalier(Cavalry aCavalry) {
+
+    }
+
+    @Override
+    public void attackedBySiege(Siege aSiege) {
+
+    }
+
+    @Override
+    public void attackedByMonk(Monk aMonk) {
+
+    }
+
+    @Override
+    public void attackedByVillager(Villager aVillager) {
+
+    }
+
+    @Override
+    public void attackedByCastle(Castle aCastle) {
+
+    }
+
+
 }
 
