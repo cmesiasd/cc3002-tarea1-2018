@@ -18,7 +18,7 @@ public class Infantry extends AbstractUnitBuildings {
 
     @Override
     public void attackedByArcher(Archer aArcher) {
-        healDamage(aArcher.getAttackPoints(), (float) 1.0);
+        receiveDamage(aArcher.getAttackPoints(), (float) 1.2);
     }
 
     @Override
