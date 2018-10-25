@@ -1,13 +1,14 @@
 package cc3002;
 
 public class Archer extends AbstractUnitBuildings {
-    public Archer(String n, float hp, float dt, float ap){
-        super(n, hp, dt, ap);
+    public Archer(String n, float hp, float ap){
+        super(n, hp, ap);
     }
-
     @Override
     public void attack(Attackable attackable) {
-        attackable.attackedByArcher(this);
+        if(this.isAlive()){
+            attackable.attackedByArcher(this);
+        }
     }
 
     @Override
@@ -19,7 +20,6 @@ public class Archer extends AbstractUnitBuildings {
     public void attackedByArcher(Archer aArcher) {
         receiveDamage(aArcher.getAttackPoints(), (float) 1.2);
     }
-
     @Override
     public void attackedByCavalier(Cavalry aCavalier) {
         receiveDamage(aCavalier.getAttackPoints(), (float) 1.5);
@@ -27,7 +27,7 @@ public class Archer extends AbstractUnitBuildings {
 
     @Override
     public void attackedByMonk(Monk aMonk) {
-        receiveDamage(aMonk.getAttackPoints(), (float) 0.5);
+        receiveDamage(aMonk.getAttackPoints(), (float) -0.5);
     }
 
     @Override

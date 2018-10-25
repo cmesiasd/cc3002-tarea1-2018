@@ -6,15 +6,13 @@ public class Barracks extends AbstractUnitBuildings {
      * Constructor for a Barracks Buildings
      * @param n Name of the Unit (Type)
      * @param hp Hit Points of the Unit
-     * @param dt Damage Taken of the Unit
      */
-    public Barracks(String n, float hp, float dt){
-        super(n,hp,dt);
+    public Barracks(String n, float hp){
+        super(n,hp);
     }
 
     @Override
     public void attack(Attackable attackable) {
-
     }
 
     @Override
@@ -34,7 +32,6 @@ public class Barracks extends AbstractUnitBuildings {
 
     @Override
     public void attackedByMonk(Monk aMonk) {
-        receiveDamage(aMonk.getAttackPoints(), (float) 0);
     }
 
     @Override

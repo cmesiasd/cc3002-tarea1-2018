@@ -6,20 +6,18 @@ package cc3002;
  */
 public abstract class AbstractUnitBuildings implements Attackable,Attacker{
     private String Name;
-    private float HitPoints, DamageTaken, AttackPoints, Factor, DamageHeal;
+    private float HitPoints, AttackPoints, Factor, MaxHP;
 
     /**
      * Constructor for AbstractUnitBuildings Attacker/Attackable
      * @param n Name of the Unit(Type)
      * @param hp Hit Points of the Unit
-     * @param dt Damage Taken of the Unit
      * @param ap Attack Points of the Unit
      */
-    public AbstractUnitBuildings(final String n, float hp, float dt, final float ap){
+    public AbstractUnitBuildings(final String n, float hp, final float ap){
         this.Name = n;
         this.HitPoints = hp;
-        this.DamageTaken = dt;
-        this.DamageHeal = 0;
+        this.MaxHP = hp;
         this.AttackPoints = ap;
         Factor = 1;
     }
@@ -28,13 +26,11 @@ public abstract class AbstractUnitBuildings implements Attackable,Attacker{
      * Constructor for AbstractUnitBuildings Attackable
      * @param n Name of the Unit(Type)
      * @param hp Hit Points of the Unit
-     * @param dt Damage Taken of the Unit
      */
-    public AbstractUnitBuildings(final String n, float hp, float dt){
+    public AbstractUnitBuildings(final String n, float hp){
         this.Name = n;
         this.HitPoints = hp;
-        this.DamageTaken = dt;
-        this.DamageHeal = 0;
+        this.MaxHP = hp;
         Factor = 1;
     }
 
@@ -54,26 +50,9 @@ public abstract class AbstractUnitBuildings implements Attackable,Attacker{
         return this.HitPoints;
     }
 
-    public void setHitPoints(){
-        if (getHitPoints() > getDamageTaken() + getDamageHeal()) {
-            this.HitPoints = this.HitPoints - getDamageTaken() + getDamageHeal();
-        }else {
-            this.HitPoints = 0;
-        }
+    public float getMaxHP(){
+        return this.MaxHP;
     }
-
-    /**
-     * Return Damage Taken of the Unit
-     * @return Unit's Damage Taken
-     */
-    public float getDamageTaken(){
-        return this.DamageTaken;
-    }
-
-    public void setDamageTaken(float damage){
-        this.DamageTaken = damage;
-    }
-
 
     /**
      * Return Attack Points of the Unit
@@ -83,77 +62,37 @@ public abstract class AbstractUnitBuildings implements Attackable,Attacker{
         return this.AttackPoints;
     }
 
-    public float getDamageHeal(){
-        return this.DamageHeal;
-    }
-
-    public void setDamageHeal(float damageHeal) {
-        this.DamageHeal = damageHeal;
-    }
 
     @Override
     public abstract void attack(Attackable attackable);
 
     @Override
     public boolean isAlive() {
-        return (this.HitPoints > this.DamageTaken);
-    }
-
-    @Override
-    public void attackedByInfant(Infantry aInfant) {
-        receiveDamage(aInfant.getAttackPoints(), Factor);
-    }
-
-    @Override
-    public void attackedByArcher(Archer aArcher) {
-        receiveDamage(aArcher.getAttackPoints(), Factor);
-    }
-
-    @Override
-    public void attackedByCavalier(Cavalry aCavalier) {
-        receiveDamage(aCavalier.getAttackPoints(), Factor);
-    }
-
-    @Override
-    public void attackedBySiege(Siege aSiege) {
-        receiveDamage(aSiege.getAttackPoints(), Factor);
-    }
-
-    @Override
-    public void attackedByMonk(Monk aMonk) {
-        receiveDamage(aMonk.getAttackPoints(), Factor);
-    }
-
-    @Override
-    public void attackedByVillager(Villager aVillager) {
-        receiveDamage(aVillager.getAttackPoints(), Factor);
-    }
-
-    @Override
-    public void attackedByCastle(Castle aCastle) {
-        receiveDamage(aCastle.getAttackPoints(), Factor);
+        return getHitPoints() > 0;
     }
 
     @Override
     public void receiveDamage(float attackPoints, float factor) {
         if (isAlive()) {
-            this.setDamageTaken(attackPoints * factor);
-            this.setHitPoints();
+            this.setHitPoints(this.getHitPoints()-attackPoints*factor);
         }
     }
 
-    public void healDamage(float attackPoints, float factor){
-        if (isAlive()){
-            this.setDamageHeal(attackPoints* factor);
-            this.setHitPoints();
+    public void setHitPoints(float nHP){
+        if (nHP <= 0){
+            this.HitPoints = 0;
+        }
+        else if (nHP > 2 * this.MaxHP){
+            this.HitPoints = this.getMaxHP();
+        }
+        else{
+            this.HitPoints = nHP;
         }
     }
-
 
     public void fullDamage(){
         if (isAlive()){
-            setDamageTaken(getHitPoints());
-            setHitPoints();
+            setHitPoints(0);
         }
     }
 

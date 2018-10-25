@@ -1,8 +1,8 @@
 package cc3002;
 
 public class Cavalry extends AbstractUnitBuildings {
-    public Cavalry(String n, float hp, float dt, float ap){
-        super(n, hp, dt, ap);
+    public Cavalry(String n, float hp, float ap){
+        super(n, hp, ap);
     }
     @Override
     public void attack(Attackable attackable) {
@@ -26,7 +26,7 @@ public class Cavalry extends AbstractUnitBuildings {
 
     @Override
     public void attackedByMonk(Monk aMonk) {
-        receiveDamage(aMonk.getAttackPoints(), (float) 0.5);
+        receiveDamage(aMonk.getAttackPoints(), (float) -0.5);
     }
 
     @Override

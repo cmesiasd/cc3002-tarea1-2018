@@ -2,14 +2,17 @@ package cc3002;
 
 public class Infantry extends AbstractUnitBuildings {
 
-    public Infantry(String n, float hp, float dt, float ap){
-        super(n, hp, dt, ap);
+    public Infantry(String n, float hp, float ap){
+        super(n, hp, ap);
     }
 
     @Override
     public void attack(Attackable attackable) {
-        attackable.attackedByInfant(this);
+        if(this.isAlive()){
+            attackable.attackedByInfant(this);
+        }
     }
+
 
     @Override
     public void attackedByInfant(Infantry aInfant) {
@@ -28,7 +31,7 @@ public class Infantry extends AbstractUnitBuildings {
 
     @Override
     public void attackedByMonk(Monk aMonk) {
-        healDamage(aMonk.getAttackPoints(), (float) 0.5);
+        receiveDamage(aMonk.getAttackPoints(), (float) -0.5);
     }
 
     @Override

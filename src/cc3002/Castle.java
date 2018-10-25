@@ -6,11 +6,10 @@ public class Castle extends AbstractUnitBuildings {
      * Constructor for a Castle Buildings
      * @param n Name of the Unit (Type)
      * @param hp Hit Points of the Unit
-     * @param dt Damage Taken of the Unit
      * @param ap Attackt Points of the Unit
      */
-    public Castle(String n, float hp, float dt, float ap){
-        super(n, hp, dt, ap);
+    public Castle(String n, float hp, float ap){
+        super(n, hp, ap);
     }
 
     @Override
@@ -35,7 +34,7 @@ public class Castle extends AbstractUnitBuildings {
 
     @Override
     public void attackedByMonk(Monk aMonk) {
-        receiveDamage(aMonk.getAttackPoints(), (float) 0);
+        ;
     }
 
     @Override

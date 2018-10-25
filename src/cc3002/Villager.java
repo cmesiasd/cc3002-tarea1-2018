@@ -1,8 +1,8 @@
 package cc3002;
 
 public class Villager extends AbstractUnitBuildings {
-    public Villager(String n, float hp, float dt, float ap){
-        super(n, hp, dt, ap);
+    public Villager(String n, float hp, float ap){
+        super(n, hp, ap);
     }
     @Override
     public void attack(Attackable attackable) {

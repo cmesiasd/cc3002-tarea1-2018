@@ -1,8 +1,8 @@
 package cc3002;
 
 public class Monk extends AbstractUnitBuildings {
-    public Monk(String n, float hp, float dt, float ap){
-        super(n, hp, dt, ap);
+    public Monk(String n, float hp, float ap){
+        super(n, hp, ap);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Monk extends AbstractUnitBuildings {
 
     @Override
     public void attackedByVillager(Villager aVillager) {
-        receiveDamage(aVillager.getAttackPoints(), (float) 0);
+
     }
 
     @Override
