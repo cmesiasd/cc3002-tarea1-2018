@@ -50,9 +50,10 @@ public interface Attackable {
     void attackedByCastle(Castle aCastle);
 
     /**
-     * Receives an attack.
+     * Receives damage.
      *
      * @param attackPoints the attack points to be discounted.
+     * @param factor by which the attack points is multiplied
      */
     void receiveDamage(float attackPoints, float factor);
 

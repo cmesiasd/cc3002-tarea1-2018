@@ -1,5 +1,10 @@
 package cc3002;
 
+/**
+ * Create the unit of Castle
+ * @author cmesias
+ * @version 1.0
+ */
 public class Castle extends AbstractUnitBuildings {
 
     /**

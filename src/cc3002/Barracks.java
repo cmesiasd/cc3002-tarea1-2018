@@ -1,5 +1,10 @@
 package cc3002;
 
+/**
+ * Create the building of Barracks
+ * @author cmesias
+ * @version 1.0
+ */
 public class Barracks extends AbstractUnitBuildings {
 
     /**

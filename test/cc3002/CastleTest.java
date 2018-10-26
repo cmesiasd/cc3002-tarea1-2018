@@ -42,49 +42,49 @@ public class CastleTest {
     public void attackedByInfant() {
         Castle.attackedByInfant(Infantry);
         assertEquals(494,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
     public void attackedByArcher() {
         Castle.attackedByArcher(Archer);
         assertEquals(498.5,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
     public void attackedByCavalier() {
         Castle.attackedByCavalier(Cavalry);
         assertEquals(494,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
     public void attackedByMonk() {
         Castle.attackedByMonk(Monk);
         assertEquals(500,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
     public void attackedBySiege() {
         Castle.attackedBySiege(Siege);
         assertEquals(450,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
     public void attackedByVillager() {
         Castle.attackedByVillager(Villager);
         assertEquals(501.5,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
     public void attackedByCastle() {
         Castle.attackedByCastle(Castle1);
         assertEquals(498,Castle.getHitPoints(),0.01);
-        assertEquals(true,Castle.isAlive());
+        assertTrue(Castle.isAlive());
     }
 
     @Test
@@ -94,18 +94,10 @@ public class CastleTest {
     }
 
     @Test
-    public void getHitPoints() {
-    }
-
-    @Test
     public void getMaxHP() {
+        assertEquals(500,Castle.getMaxHP(),0.01);
+        assertNotEquals(100,Castle1.getMaxHP(),0.01);
     }
 
-    @Test
-    public void getAttackPoints() {
-    }
 
-    @Test
-    public void isAlive() {
-    }
 }

@@ -1,6 +1,18 @@
 package cc3002;
 
+/**
+ * Create the unit of Villager
+ * @author cmesias
+ * @version 1.0
+ */
 public class Villager extends AbstractUnitBuildings {
+
+    /**
+     * Constructor for a Villager Unit
+     * @param n Name of the Unit (Type)
+     * @param hp Hit Points of the Unit
+     * @param ap Attackt Points of the Unit
+     */
     public Villager(String n, float hp, float ap){
         super(n, hp, ap);
     }

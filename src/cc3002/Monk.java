@@ -1,6 +1,17 @@
 package cc3002;
 
+/**
+ * Create the unit of Monk
+ * @author cmesias
+ * @version 1.0
+ */
 public class Monk extends AbstractUnitBuildings {
+    /**
+     * Constructor for a Monk Unit
+     * @param n Name of the Unit (Type)
+     * @param hp Hit Points of the Unit
+     * @param ap Attackt Points of the Unit
+     */
     public Monk(String n, float hp, float ap){
         super(n, hp, ap);
     }
@@ -36,9 +47,7 @@ public class Monk extends AbstractUnitBuildings {
     }
 
     @Override
-    public void attackedByVillager(Villager aVillager) {
-
-    }
+    public void attackedByVillager(Villager aVillager) { }
 
     @Override
     public void attackedByCastle(Castle aCastle) {

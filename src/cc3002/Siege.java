@@ -1,9 +1,21 @@
 package cc3002;
-
+/**
+ * Create the Unit Siege
+ * @author cmesias
+ * @version 1.0
+ */
 public class Siege extends AbstractUnitBuildings {
+
+    /**
+     * Constructor for a Siege Unit
+     * @param n Name of the Unit (Type)
+     * @param hp Hit Points of the Unit
+     * @param ap Attackt Points of the Unit
+     */
     public Siege(String n, float hp, float ap){
         super(n, hp, ap);
     }
+
     @Override
     public void attack(Attackable attackable) {
         attackable.attackedBySiege(this);
@@ -25,9 +37,7 @@ public class Siege extends AbstractUnitBuildings {
     }
 
     @Override
-    public void attackedByMonk(Monk aMonk) {
-
-    }
+    public void attackedByMonk(Monk aMonk) { }
 
     @Override
     public void attackedBySiege(Siege aSiege) {

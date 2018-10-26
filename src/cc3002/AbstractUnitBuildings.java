@@ -1,41 +1,43 @@
 package cc3002;
 
 /**
- * Represents an abstract Unit
+ * Represents an abstract entity(Unit or Building)
  * @author cmesiasd
+ * @version 1.0
  */
-public abstract class AbstractUnitBuildings implements Attackable,Attacker{
+public abstract class AbstractUnitBuildings implements Attackable,Attacker {
     private String Name;
-    private float HitPoints, AttackPoints, Factor, MaxHP;
+    private float HitPoints, AttackPoints, MaxHP;
 
     /**
      * Constructor for AbstractUnitBuildings Attacker/Attackable
-     * @param n Name of the Unit(Type)
+     *
+     * @param n  Name of the Unit(Type)
      * @param hp Hit Points of the Unit
      * @param ap Attack Points of the Unit
      */
-    public AbstractUnitBuildings(final String n, float hp, final float ap){
+    public AbstractUnitBuildings(final String n, float hp, final float ap) {
         this.Name = n;
         this.HitPoints = hp;
         this.MaxHP = hp;
         this.AttackPoints = ap;
-        Factor = 1;
     }
 
     /**
      * Constructor for AbstractUnitBuildings Attackable
-     * @param n Name of the Unit(Type)
+     *
+     * @param n  Name of the Unit(Type)
      * @param hp Hit Points of the Unit
      */
-    public AbstractUnitBuildings(final String n, float hp){
+    public AbstractUnitBuildings(final String n, float hp) {
         this.Name = n;
         this.HitPoints = hp;
         this.MaxHP = hp;
-        Factor = 1;
     }
 
     /**
      * Return the name of the Unit
+     *
      * @return Unit's name
      */
     public String getName() {
@@ -44,21 +46,28 @@ public abstract class AbstractUnitBuildings implements Attackable,Attacker{
 
     /**
      * Return HitPoints of the Unit
+     *
      * @return Unit's HP
      */
-    public float getHitPoints(){
+    public float getHitPoints() {
         return this.HitPoints;
     }
 
-    public float getMaxHP(){
+    /**
+     * Return the max value of Hit Points of the Unit
+     *
+     * @return Max Unit's HP
+     */
+    public float getMaxHP() {
         return this.MaxHP;
     }
 
     /**
      * Return Attack Points of the Unit
+     *
      * @return Unit's AP
      */
-    public float getAttackPoints(){
+    public float getAttackPoints() {
         return this.AttackPoints;
     }
 
@@ -74,31 +83,31 @@ public abstract class AbstractUnitBuildings implements Attackable,Attacker{
     @Override
     public void receiveDamage(float attackPoints, float factor) {
         if (isAlive()) {
-            this.setHitPoints(this.getHitPoints()-attackPoints*factor);
+            this.setHitPoints(this.getHitPoints() - attackPoints * factor);
         }
     }
 
-    public void setHitPoints(float nHP){
-        if (nHP <= 0){
+    /**
+     * Set the Hit Points of the Unit
+     *
+     * @param nHP new value of Hit Points
+     */
+    public void setHitPoints(float nHP) {
+        if (nHP <= 0) {
             this.HitPoints = 0;
-        }
-        else if (nHP > 2 * this.MaxHP){
+        } else if (nHP > 2*this.MaxHP) {
             this.HitPoints = this.getMaxHP();
-        }
-        else{
+        } else {
             this.HitPoints = nHP;
         }
     }
 
-    public void fullDamage(){
-        if (isAlive()){
-            setHitPoints(0);
-        }
+    /**
+     * An entity is attacked and dies at a stroke
+     * Set the Hit Points in 0
+     */
+    public void fullDamage() {
+        if (isAlive()) setHitPoints(0);
     }
-
-
-
-
-
 }
 

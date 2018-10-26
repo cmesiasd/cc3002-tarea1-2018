@@ -1,7 +1,18 @@
 package cc3002;
 
+/**
+ * Create the unit of Infantry
+ * @author cmesias
+ * @version 1.0
+ */
 public class Infantry extends AbstractUnitBuildings {
 
+    /**
+     * Constructor for a Infantry Unit
+     * @param n Name of the Unit (Type)
+     * @param hp Hit Points of the Unit
+     * @param ap Attackt Points of the Unit
+     */
     public Infantry(String n, float hp, float ap){
         super(n, hp, ap);
     }
