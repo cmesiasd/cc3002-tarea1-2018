@@ -27,7 +27,64 @@ public class ArcherTest {
         Villager = new Villager("Villager", 50,  5);
         Monk = new Monk("Monje", 20,  10);
         Barracks = new Barracks("Barracks", 400 );
-        Monk1 = new Monk("Monk_full",20,10);
+        Monk1 = new Monk("Monk_full",20,100);
+    }
+
+    @Test
+    public void attack() {
+        Archer.attack(Barracks);
+        assertEquals(389.5,Barracks.getHitPoints(), 0.01);
+        Archer.attack(Archer1);
+        assertEquals(82,Archer1.getHitPoints(),0.01);
+    }
+
+    @Test
+    public void attackedByInfant() {
+        Archer.attackedByInfant(Infantry);
+        assertEquals(76,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
+    }
+
+    @Test
+    public void attackedByArcher() {
+        Archer.attackedByArcher(Archer);
+        assertEquals(82,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
+    }
+
+    @Test
+    public void attackedByCavalier() {
+        Archer.attackedByCavalier(Cavalry);
+        assertEquals(70,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
+    }
+
+    @Test
+    public void attackedByMonk() {
+        Archer.attackedByMonk(Monk1);
+        assertEquals(150,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
+    }
+
+    @Test
+    public void attackedBySiege() {
+        Archer.attackedBySiege(Siege);
+        assertEquals(62.5,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
+    }
+
+    @Test
+    public void attackedByVillager() {
+        Archer.attackedByVillager(Villager);
+        assertEquals(95,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
+    }
+
+    @Test
+    public void attackedByCastle() {
+        Archer.attackedByCastle(Castle);
+        assertEquals(76,Archer.getHitPoints(),0.01);
+        assertTrue(Archer.isAlive());
     }
 
     @Test
@@ -38,6 +95,21 @@ public class ArcherTest {
     }
 
     @Test
+    public void getMaxHP() {
+        assertEquals(100, Archer.getMaxHP(), 0.1);
+        assertNotEquals(150, Archer1.getMaxHP(), 0.1);
+        assertEquals(100, Archer1.getMaxHP(), 0.1);
+    }
+
+    @Test
+    public void getAttackPoints() {
+        assertEquals(15, Archer.getAttackPoints(), 0.1);
+        assertNotEquals(500, Archer.getAttackPoints(), 0.1);
+        assertEquals(20, Archer1.getAttackPoints(), 0.1);
+    }
+
+
+    /*@Test
     public void AttackedbyX(){
         Archer.attackedByInfant(Infantry);
         assertEquals(76,Archer.getHitPoints(),0.01);
@@ -57,5 +129,6 @@ public class ArcherTest {
         assertEquals(81,Archer1.getHitPoints(),0.01);
         Archer1.attack(Siege);
         assertEquals(34,Siege.getHitPoints(),0.01);
-    }
+    }*/
+
 }

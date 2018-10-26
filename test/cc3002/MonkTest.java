@@ -16,14 +16,14 @@ public class MonkTest {
     Barracks Barracks;
 
     @Before
-    public void setUP(){
-        Infantry = new Infantry("Ejercito", 100,  20);
+    public void setUp(){
+        Infantry = new Infantry("Infantry", 100,  20);
         Archer = new Archer("Archer", 100,  15);
         Cavalry = new Cavalry("Cavalry", 100, 20);
         Siege = new Siege("Siege", 50,  25);
-        Castle = new Castle("Castillo1", 500,  20);
+        Castle = new Castle("Castle", 500,  20);
         Villager = new Villager("Villager", 50,  5);
-        Monk = new Monk("Monje", 20,  10);
+        Monk = new Monk("Monk", 20,  10);
         Barracks = new Barracks("Barracks", 400 );
         Monk1 = new Monk("Monk_full",20,110);
     }
@@ -82,5 +82,25 @@ public class MonkTest {
         Monk.attackedByCastle(Castle);
         assertEquals(0,Monk.getHitPoints(),0.01);
         assertEquals(false,Monk.isAlive());
+    }
+
+    @Test
+    public void getName() {
+        assertEquals("Monk",Monk.getName());
+        assertNotEquals("Monkey",Monk1.getName());
+        assertEquals("Monk_full",Monk1.getName());
+    }
+
+    @Test
+    public void getMaxHP() {
+        assertEquals(20,Monk.getMaxHP(),0.01);
+        assertNotEquals(100,Monk1.getMaxHP(),0.01);
+    }
+
+    @Test
+    public void getAttackPoints() {
+        assertEquals(10, Monk.getAttackPoints(), 0.1);
+        assertNotEquals(500, Monk.getAttackPoints(), 0.1);
+        assertEquals(110, Monk1.getAttackPoints(), 0.1);
     }
 }

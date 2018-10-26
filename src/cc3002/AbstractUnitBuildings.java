@@ -96,7 +96,7 @@ public abstract class AbstractUnitBuildings implements Attackable,Attacker {
         if (nHP <= 0) {
             this.HitPoints = 0;
         } else if (nHP > 2*this.MaxHP) {
-            this.HitPoints = this.getMaxHP();
+            this.HitPoints = 2* this.getMaxHP();
         } else {
             this.HitPoints = nHP;
         }

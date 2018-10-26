@@ -17,14 +17,14 @@ public class CastleTest {
 
     @Before
     public void setUp() throws Exception {
-        Infantry = new Infantry("Ejercito", 100,  20);
+        Infantry = new Infantry("Infantry", 100,  20);
         Archer = new Archer("Archer", 100,  15);
         Cavalry = new Cavalry("Cavalry", 100, 20);
         Siege = new Siege("Siege", 50,  25);
         Castle = new Castle("Castle", 500,  20);
         Castle1 = new Castle("Castle1",500,20);
         Villager = new Villager("Villager", 50,  5);
-        Monk = new Monk("Monje", 100,  10);
+        Monk = new Monk("Monk", 100,  10);
         Barracks = new Barracks("Barracks", 400 );
         Monk1 = new Monk("Monk_full",20,110);
     }
@@ -97,6 +97,13 @@ public class CastleTest {
     public void getMaxHP() {
         assertEquals(500,Castle.getMaxHP(),0.01);
         assertNotEquals(100,Castle1.getMaxHP(),0.01);
+    }
+
+    @Test
+    public void getAttackPoints() {
+        assertEquals(20, Castle.getAttackPoints(), 0.1);
+        assertNotEquals(500, Castle.getAttackPoints(), 0.1);
+        assertEquals(20, Castle1.getAttackPoints(), 0.1);
     }
 
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cc3002</OriginalElement>
+  <nodes>
+    <node x="1073.0" y="273.0">cc3002.Attacker</node>
+    <node x="0.0" y="771.0">cc3002.Castle</node>
+    <node x="1071.5" y="403.0">cc3002.AbstractUnitBuildings</node>
+    <node x="630.0" y="771.0">cc3002.Barracks</node>
+    <node x="1260.0" y="771.0">cc3002.Monk</node>
+    <node x="945.0" y="771.0">cc3002.Siege</node>
+    <node x="1575.0" y="771.0">cc3002.Archer</node>
+    <node x="315.0" y="771.0">cc3002.Infantry</node>
+    <node x="2205.0" y="771.0">cc3002.Cavalry</node>
+    <node x="1890.0" y="771.0">cc3002.Villager</node>
+    <node x="1102.5" y="0.0">cc3002.Attackable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cc3002.Monk" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="1407.5" y="751.0" />
+      <point x="1272.3125" y="751.0" />
+      <point x="22.3125" y="149.0" />
+    </edge>
+    <edge source="cc3002.Siege" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="1092.5" y="751.0" />
+      <point x="1227.6875" y="751.0" />
+      <point x="-22.3125" y="149.0" />
+    </edge>
+    <edge source="cc3002.Infantry" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="462.5" y="731.0" />
+      <point x="1138.4375" y="731.0" />
+      <point x="-111.5625" y="149.0" />
+    </edge>
+    <edge source="cc3002.AbstractUnitBuildings" target="cc3002.Attacker">
+      <point x="-89.25" y="-149.0" />
+      <point x="1160.75" y="378.0" />
+      <point x="1187.5" y="378.0" />
+      <point x="0.0" y="40.0" />
+    </edge>
+    <edge source="cc3002.Castle" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="147.5" y="721.0" />
+      <point x="1093.8125" y="721.0" />
+      <point x="-156.1875" y="149.0" />
+    </edge>
+    <edge source="cc3002.Attacker" target="cc3002.Attackable">
+      <point x="0.0" y="-40.0" />
+      <point x="1187.5" y="248.0" />
+      <point x="1176.25" y="248.0" />
+      <point x="-73.75" y="111.5" />
+    </edge>
+    <edge source="cc3002.Archer" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="1722.5" y="741.0" />
+      <point x="1316.9375" y="741.0" />
+      <point x="66.9375" y="149.0" />
+    </edge>
+    <edge source="cc3002.Villager" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="2037.5" y="731.0" />
+      <point x="1361.5625" y="731.0" />
+      <point x="111.5625" y="149.0" />
+    </edge>
+    <edge source="cc3002.AbstractUnitBuildings" target="cc3002.Attackable">
+      <point x="89.25" y="-149.0" />
+      <point x="1339.25" y="378.0" />
+      <point x="1312.5" y="378.0" />
+      <point x="1312.5" y="248.0" />
+      <point x="1323.75" y="248.0" />
+      <point x="73.75" y="111.5" />
+    </edge>
+    <edge source="cc3002.Cavalry" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="2352.5" y="721.0" />
+      <point x="1406.1875" y="721.0" />
+      <point x="156.1875" y="149.0" />
+    </edge>
+    <edge source="cc3002.Barracks" target="cc3002.AbstractUnitBuildings">
+      <point x="0.0" y="-124.0" />
+      <point x="777.5" y="741.0" />
+      <point x="1183.0625" y="741.0" />
+      <point x="-66.9375" y="149.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7575107296137339" x="584.6118980169972" y="548.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>Production</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
